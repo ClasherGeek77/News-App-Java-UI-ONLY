@@ -1,0 +1,19 @@
+#parse("/velocity/layout.vm")
+#@mainLayout()
+    <div>
+        <form method="post">
+            <h1>Account Status</h1>
+            <label for="username"><b>Logged in</b></label>
+            <br>
+            <button type="submit" class="btn btn-success" href="$WebPath.getNEWS()">
+            <i data-feather="log-in"></i>Log Out
+            </button>
+        </form>
+    </div>
+    #if($error)
+    <script>
+        alert("error");
+    </script>
+    #end
+#end
+

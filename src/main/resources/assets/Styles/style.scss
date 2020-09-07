@@ -1,0 +1,109 @@
+$size: 280px;
+$shadow: 0 0 5px darkslategray;
+body,
+html {
+  width: 100%;
+}
+div {
+  padding: 2px;
+}
+h1 {
+  background-color: lightgray;
+  padding: 35px;
+}
+li {
+  padding: 0px 0px 0px 27px;
+}
+li5 {
+  padding: 0px 0px 0px 370px;
+}
+input {
+  height: 38px;
+  width: 300px;
+}
+.textOverImage {
+  position: relative;
+  width: $size;
+  height: $size;
+  float: left;
+  margin: 10px;
+  background-size: auto 100%;
+  background-position: center;
+  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: $shadow;
+  &:hover {
+    background-size: auto 110%;
+    &:after {
+      transform: translateY(0);
+      transition: 0.5s 0.1s;
+    }
+    &:before {
+      transform: translateY(0);
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: 0.5s;
+    }
+  }
+
+  &:before {
+    transform: translateY(90%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 0 8px;
+    content: attr(data-title);
+    transition: 0.5s 0.1s;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 8px;
+    content: attr(data-text);
+    transition: 0.5s;
+    transform: translateY(100%);
+  }
+
+  &:first-line {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}
+.Container {
+  margin-left: 30px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 30px 300px 15px 300px;
+  .top {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .bott {
+    grid-row-start: 4;
+  }
+  .textarea {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    margin: 10px;
+    height: $size;
+    width: calc(100% - 50px);
+    box-shadow: $shadow;
+    font-size: 16px;
+    overflow: auto;
+  }
+}

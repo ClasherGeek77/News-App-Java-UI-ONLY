@@ -1,0 +1,27 @@
+#parse("/velocity/layout.vm")
+#@mainLayout()
+    <div>
+        <form method="post">
+            <h1>Login</h1>
+
+            <label for="username"><b>Username</b></label>
+            <input type="text" class="form-control" placeholder="Enter username" name="username" required>
+            <br>
+            <label for="password"><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+            <br>
+            <button type="submit" class="btn btn-primary">
+            <i data-feather="log-in"></i> Login
+            </button>
+            <br>
+            <br>
+            <a href="$WebPath.getNEWS_REGISTER()">Have no account? Register!</a>
+        </form>
+    </div>
+    #if($error)
+    <script>
+        alert("error");
+    </script>
+    #end
+#end
+
